@@ -6,8 +6,8 @@ let port=process.env.PORT||5014
 let app=express()
 let citycontroller=require("./Controller/citiesmodelcontoller")
 let route=require('./routes/cityroute')
-
-
+const cors = require('cors');
+app.use(cors());
 app.use(express.json({ limit: '20mb' })); // or higher like '20mb' if needed
 app.use(express.urlencoded({ extended: true, limit: '20mb' }));
 
